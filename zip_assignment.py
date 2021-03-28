@@ -5,12 +5,9 @@ is of this exact structure (with exact naming):
 | data
     | *.csv
 | <all the other stuff that you included with no name requirements>
-
 And then it will zip
-
 This code is inspired by the submission zip file created by Professor
 James Tompkin (james_topkin@brown.edu) for CSCI 1430 - Brown University.
-
 Adapted by Nam Do (nam_do@brown.edu) - Spring 2021.
 """
 from __future__ import with_statement
@@ -103,7 +100,7 @@ def main():
         # and then output it to PATH_TO_SUBMISSIONLINK
         with open(PATH_TO_SUBMISSIONLINK, "w") as lolfile:
             lolfile.writelines([tinyurl + "\n\n", binary_enc + "\n"])
-    
+
     # alright. Now before we do anything, we'll commit and push
     print(" Committing your code to Github for Github Pages ... ")
     sequence = [ ['git', 'add', '.'] , ['git', 'commit', '-m', '.'] , ['git', 'push']]
@@ -118,7 +115,7 @@ def main():
         print("You will need to push your code to Github manually to be graded.")
 
 
-    
+
     # Alright. Now right before submission, we will assert that the PATH_TO_SUBMISSIONLINK
     # exists now
     if not os.path.exists(PATH_TO_SUBMISSIONLINK):
