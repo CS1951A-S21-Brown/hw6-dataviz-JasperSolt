@@ -6,23 +6,90 @@
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
+        <script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
 <body>
     <div class="header">
         <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
-    <div class="row">
+
+    <div class="row" style="text-align:center;">
         <div class="col-lg-6">
             <div id="graph1"></div>
+        </div>
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-info" onclick="setup_graph2('NA_Sales')">North America</button>
+            <button type="button" class="btn btn-info" onclick="setup_graph2('EU_Sales')">Europe</button>
+            <button type="button" class="btn btn-info" onclick="setup_graph2('JP_Sales')">Japan</button>
+            <button type="button" class="btn btn-info" onclick="setup_graph2('Other_Sales')">Other</button>
             <div id="graph2"></div><br/>
         </div>
         <div class="col-lg-6">
+            <select id="selectButton"></select>
             <div id="graph3"></div>
         </div>
+        Answers to questions are in the html comments
     </div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
+
+<!--
+1. Describe how your dashboard answers the questions presented.
+You don't have to address every question directly, but should at a
+high level address the main questions. (10 points)
+
+Graph 1 shows the top 10 best selling games of all time as a bar graph
+with clearly labelled values. Graph 2 is a donut chart that toggles between
+regions with buttons, which shows the fraction of game sales accounting for
+each of the 12 genres present in the data set; one can find the best-selling
+genre per region by finding the largest donut segment. Graph 3 toggle between
+genres with the dropdown menu and shows the top 5 publishers for both the total
+sales within a genre and the average return per game. This graph tells us
+who sells the most games in a genre and who makes consistantly high-selling
+games within that genre. Interactivity is in graphs 2 and 3 and
+tooltips are on graph 2.
+
+2. List 3 reasons why D3 was helpful and improved your visualization. (6 points)
+
+D3 made binding data to svg objects extremely easy. Because it has structures for
+making all sorts of graphs it was easy to find one I wanted and plug in my data. The
+built-in analysis functions also were helpful.
+
+3. List 3 reasons why D3 would not be the best tool for creating a visualization (6 points)
+
+There's a huge learning curve to getting into d3. It sometimes feels very obtuse with its
+syntax and methods, and I struggled to understand what examples were doing when I researched
+them. Overall it feels much more clunky and complicated than something like matplotlib.
+
+4. Evaluate the accessibility of your dashboard based on the readings in the
+“Before you begin” section. What kinds of users might find this dashboard
+accessible and who might have more difficulty? What additional actions might
+you take to make this dashboard more accessible to all audiences?
+Your response should refer to at least one of the readings and be about 1
+paragraph.
+
+In "A Comprehensive Guide to Accessible Data Visualization," several guidelines
+are introduced to help data scientists create accessible visualizations. I did
+my best to implement these, but struggled because of my limited understanding of d3
+and by the data set itself. For one thing, I tried not to rely on color to convey
+information. There are no color based legends; everything is labelled directly. I
+wanted to use more contrasting colors with my donut graph, but it became challenging
+to find a set of 12 colors that all contrasted well. Additionally, the guide reccommends
+against using tooltips, but I had to include those because of the assignment.
+
+Overall, I don't think my dashboard is very accessible. The visually impared would
+have an especially hard time because I don't have alt text on my html elements.
+
+
+5. Reflect on the stages of your design and implementation process when you
+could have taken steps to make your dashboard more accessible to all audiences.
+What are some factors that kept you from taking these steps? (a few sentences)
+
+Both time and experience with d3 limited what accesibility features I could
+implement. The limited time pushed implementing accesibility features down in
+priority, because I was so focused on meeting the assignment guidelines. These
+features should have been planned from the earliest stages of sketching out graphs.
+-->
